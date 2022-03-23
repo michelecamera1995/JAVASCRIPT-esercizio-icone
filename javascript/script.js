@@ -40,9 +40,7 @@ const iconColor = listaicone.forEach((element) => {
 
 });
 
-const filteredCats = listaicone.map((listaicone) => listaicone.color !== 'Orange');
 
-console.log(filteredCats)
 
 //Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 

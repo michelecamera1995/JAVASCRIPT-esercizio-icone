@@ -1,4 +1,4 @@
-console.log("js-ok")
+
 
 //Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
 
@@ -9,11 +9,12 @@ const iconContainer = document.getElementById('container');
 createIconBox(listaicone);
 
 // funzioni per creare i box delle icone
+
 function createIconBox(iconslist) {
-    for (let i = 0; i < iconslist.length; i++) {
-        const card = createCard(iconslist[i]);
+    iconslist.forEach((element) => {
+        const card = createCard(element);
         iconContainer.appendChild(card);
-    }
+    });
 }
 
 function createCard(iconslist) {
@@ -29,10 +30,16 @@ function createCard(iconslist) {
 }
 
 
-
-
-
 //------------------------------------------------------------------------//
+
+const iconColor = listaicone.forEach((element) => {
+
+    const { color } = element;
+
+    console.log({ color });
+});
+
+console.log(iconColor);
 
 //Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 

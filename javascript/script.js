@@ -5,6 +5,7 @@
 // 1 - recupero l'elemento html dalla pagina
 const iconContainer = document.getElementById('container');
 const iconBox = document.createElement('div');
+const selectMenu = document.getElementById('selection');
 
 // 2 - creo i div nella pagina con la funzione
 createIconBox(listaicone);
@@ -22,7 +23,7 @@ function createCard(iconslist) {
     const iconBox = document.createElement('div');
     iconBox.className = "iconbox";
     iconBox.innerHTML = `
-              <div class="card-image">
+              <div >
                 <i class="fa-solid icon ${iconslist.prefix}${iconslist.name}"></i>
                 <h3>${iconslist.name}</h3>
               </div>
@@ -36,9 +37,14 @@ function createCard(iconslist) {
 
 //Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 
-const iconCol = document.querySelector('.icon');
+const iconCol = document.querySelectorAll('.icon');
 
-IconColor(listaicone);
+for (let i = 0; i < iconCol.length; i++) {
+    console.table("classi trovate")
+}
+
+console.log(iconCol)
+
 
 function IconColor(array) {
     array.forEach((element) => {
@@ -52,7 +58,13 @@ function IconColor(array) {
     })
 }
 
-console.log(iconCol)
-
 //Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 
+
+const menu = document.getElementById('selection')
+
+menu.innerHTML = `
+        <option value="Animals">Animals</option>
+        <option value="Vegetable">Vegetable</option>
+        <option value="User">User</option>
+`;

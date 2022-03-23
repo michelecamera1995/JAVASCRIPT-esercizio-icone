@@ -62,9 +62,23 @@ function IconColor(array) {
 
 
 const menu = document.getElementById('selection')
+const value = menu.value;
 
 menu.innerHTML = `
         <option value="Animals">Animals</option>
         <option value="Vegetable">Vegetable</option>
         <option value="User">User</option>
 `;
+menu.addEventListener("click", menuhider(listaicone))
+
+function menuhider(array) {
+    array.forEach((element) => {
+        if (value === "animals") {
+            console.log("animals")
+        } else if (value === "Vegetable") {
+            console.log("vegetables")
+        } else if (value === "User") {
+            console.log("User")
+        }
+    })
+}

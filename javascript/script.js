@@ -31,20 +31,13 @@ function createCard(iconslist) {
     return iconBox;
 }
 
-
 //------------------------------------------------------------------------//
-
 
 //Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 
-const iconCol = document.querySelectorAll('.icon');
+const iconCol = document.getElementsByClassName('icon')[0];
 
-for (let i = 0; i < iconCol.length; i++) {
-    console.table("classi trovate")
-}
-
-console.log(iconCol)
-
+IconColor(listaicone)
 
 function IconColor(array) {
     array.forEach((element) => {
@@ -58,27 +51,15 @@ function IconColor(array) {
     })
 }
 
+//------------------------------------------------------------------------//
+
 //Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 
-
 const menu = document.getElementById('selection')
-const value = menu.value;
 
 menu.innerHTML = `
         <option value="Animals">Animals</option>
         <option value="Vegetable">Vegetable</option>
         <option value="User">User</option>
 `;
-menu.addEventListener("click", menuhider(listaicone))
 
-function menuhider(array) {
-    array.forEach((element) => {
-        if (value === "animals") {
-            console.log("animals")
-        } else if (value === "Vegetable") {
-            console.log("vegetables")
-        } else if (value === "User") {
-            console.log("User")
-        }
-    })
-}

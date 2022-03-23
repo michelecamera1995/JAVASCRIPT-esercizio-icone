@@ -32,16 +32,20 @@ function createCard(iconslist) {
 
 //------------------------------------------------------------------------//
 
+const teamContainer = document.querySelector('.iconbox');
+
 const iconColor = listaicone.forEach((element) => {
-
     const { color } = element;
-
     console.log({ color });
+
 });
 
-console.log(iconColor);
+const filteredCats = listaicone.map((listaicone) => listaicone.color !== 'Orange');
+
+console.log(filteredCats)
 
 //Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 
-const teamContainer = document.querySelector('.iconbox');
+
+//Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 

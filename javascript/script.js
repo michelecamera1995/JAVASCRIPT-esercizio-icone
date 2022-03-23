@@ -23,8 +23,8 @@ function createCard(iconslist) {
     iconBox.className = "iconbox";
     iconBox.innerHTML = `
               <div class="card-image">
-                <i class="${iconslist.prefix}${iconslist.name}"></i>
-                <span><h3>${iconslist.name}</h3></span>
+                <i class="fa-solid icon ${iconslist.prefix}${iconslist.name}"></i>
+                <h3>${iconslist.name}</h3>
               </div>
       `;
     return iconBox;
@@ -36,23 +36,23 @@ function createCard(iconslist) {
 
 //Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 
-const teamContainer = document.querySelector('.iconbox');
+const iconCol = document.querySelector('.icon');
 
 IconColor(listaicone);
 
 function IconColor(array) {
     array.forEach((element) => {
-        if (element.color === 'Orange') {
-            iconBox.classList.add('ico-orange')
-        } else if (element.color === 'blue') {
-            iconBox.classList.add('ico-blue')
-        } else {
-            iconBox.classList.add('ico-green')
+        if (element.color === 'orange' && element.type === 'animal') {
+            iconCol.classList.add('icoorange')
+        } else if (element.color === 'blue' && element.type === 'user') {
+            iconCol.classList.add('icoblue')
+        } else if (element.color === 'green' && element.type === 'vegetable') {
+            iconCol.classList.add('icogreen')
         }
     })
 }
 
-
+console.log(iconCol)
 
 //Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 

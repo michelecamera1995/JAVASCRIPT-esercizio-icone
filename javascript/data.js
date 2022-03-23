@@ -1,4 +1,6 @@
-[
+
+
+const listaicone = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +114,4 @@
 		color: 'blue'
 	}
 ];
+

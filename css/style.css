@@ -1,0 +1,16 @@
+
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: grey;
+}
+
+.iconbox{
+    text-align: center;
+    margin: 5%;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+}

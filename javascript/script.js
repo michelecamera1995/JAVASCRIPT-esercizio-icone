@@ -4,6 +4,7 @@
 
 // 1 - recupero l'elemento html dalla pagina
 const iconContainer = document.getElementById('container');
+const iconBox = document.createElement('div');
 
 // 2 - creo i div nella pagina con la funzione
 createIconBox(listaicone);
@@ -22,7 +23,7 @@ function createCard(iconslist) {
     iconBox.className = "iconbox";
     iconBox.innerHTML = `
               <div class="card-image">
-                <i>${iconslist.prefix}${iconslist.name}</i>
+                <i class="${iconslist.prefix}${iconslist.name}"></i>
                 <span><h3>${iconslist.name}</h3></span>
               </div>
       `;
@@ -32,17 +33,25 @@ function createCard(iconslist) {
 
 //------------------------------------------------------------------------//
 
-const teamContainer = document.querySelector('.iconbox');
-
-const iconColor = listaicone.forEach((element) => {
-    const { color } = element;
-    console.log({ color });
-
-});
-
-
 
 //Ciascuna icona ha una proprietà "color": utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
+
+const teamContainer = document.querySelector('.iconbox');
+
+IconColor(listaicone);
+
+function IconColor(array) {
+    array.forEach((element) => {
+        if (element.color === 'Orange') {
+            iconBox.classList.add('ico-orange')
+        } else if (element.color === 'blue') {
+            iconBox.classList.add('ico-blue')
+        } else {
+            iconBox.classList.add('ico-green')
+        }
+    })
+}
+
 
 
 //Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.

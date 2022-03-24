@@ -1,6 +1,29 @@
 
 console.log("Framework ok")
 
+
+
+//---------funzione colore random su oggetto html 1a versione------------//
+
+function setColor(htmlElementone) {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    htmlElementone.style.backgroundColor = "#" + randomColor;
+};
+
+//---------funzione colore random su oggetto html 2a versione------------//
+
+function generateRandomColor() {
+    let color = '#';
+    const availableValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+
+    for (let i = 0; i < 6; i++) {
+        const randomIndex = Math.floor(Math.random() * availableValues.length);
+        color += availableValues[randomIndex];
+    }
+    // console.log(color);
+    return color;
+}
+
 //----------funzione genera array con numeri casuali---------//
 
 function createRandomNumberArray(arrayLength) {

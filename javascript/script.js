@@ -10,9 +10,8 @@ const selectMenu = document.getElementById('selection');
 const categories = ['animal', 'vegetable', 'user'];
 
 // creo i div nella pagina con la funzione
-createIconBox(listaicone)
 
-setColor(iconContainer);
+createIconBox(listaicone)
 
 createSelectElement(categories);
 
